@@ -1796,7 +1796,9 @@ Citizen.CreateThread(function()
 		Citizen.Wait(10)
 
 		if CurrentAction ~= nil then
-			ESX.ShowHelpNotification(CurrentActionMsg)
+ 		  SetTextComponentFormat('STRING')
+   	      AddTextComponentString(CurrentActionMsg)
+    	  DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 
 			if IsControlJustReleased(0, Keys['E']) and PlayerData.job ~= nil and PlayerData.job.name == 'police' then
 
